@@ -56,6 +56,10 @@ const config = {
         test: /\.svg(\?.*)?$/,
         loader: 'file-loader',
       },
+      {
+        test: /\.md$/,
+        loader: 'text-loader',
+      },
     ],
   },
   devtool: 'source-map',
