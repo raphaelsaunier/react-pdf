@@ -1,5 +1,12 @@
+@import "basscss";
 @import "./colors";
 @import "./fonts";
+@import "./layout";
+
+:root {
+  --space-3: 50px;
+  --space-4: 110px;
+}
 
 * {
   margin: 0px;

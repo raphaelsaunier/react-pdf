@@ -29,6 +29,10 @@ const config = {
         use: ['style-loader', 'css-loader', 'postcss-loader'],
       },
       {
+        test: /\.(png|jpg)$/,
+        loader: 'url-loader?limit=8192',
+      },
+      {
         test: /\.woff(\?.*)?$/,
         loader:
           'url-loader?prefix=fonts/&name=[path][name].[ext]&limit=10000&mimetype=application/font-woff',
