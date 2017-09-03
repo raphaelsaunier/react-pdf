@@ -11,6 +11,8 @@
     "start": "webpack-dev-server --content-base src --open --historyApiFallback"
   },
   "dependencies": {
+    "classnames": "^2.2.5",
+    "font-awesome": "^4.7.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-markdown": "^2.5.0"
