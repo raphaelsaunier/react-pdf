@@ -1,14 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import CornerGraphics from '../static/images/corner-graphics.png';
 
-const CornerGraphicsImage = styled.img`
-  position: absolute;
-  top: 0;
-  right: 0;
-`;
-
-const Title = styled.h1`
+const Wrapper = styled.div`
   padding: 0px 32px;
   position: relative;
   border-left: 2px solid #F22300;
@@ -26,12 +19,22 @@ const Title = styled.h1`
   }
 `;
 
-const NotFound = () =>
-  <div>
-    <CornerGraphicsImage src={CornerGraphics} />
-    <Title>
-      404: Oops! This page does not exist
-    </Title>
-  </div>;
+const Heading = styled.h1`
+  margin: 0px;
+`;
 
-export default NotFound;
+const SubHeading = styled.p`
+  margin: 0px;
+`;
+
+const Title = () =>
+  <Wrapper>
+    <Heading>
+      React-pdf
+    </Heading>
+    <SubHeading>
+      React renderer for creating PDF files on the browser, mobile and server.
+    </SubHeading>
+  </Wrapper>;
+
+export default Title;

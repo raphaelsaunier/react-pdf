@@ -1,11 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import toLowerCase from '../utils/toLowerCase';
 
-const Heading = () =>
-  <div className="py1 px2 border-left border-thick border-red border-tip">
-    <h1 className="m0">React-pdf</h1>
-    <p className="m0">
-      React renderer for creating PDF files on the browser, mobile and server.
-    </p>
-  </div>;
+const Heading = ({ level, children }) =>
+  React.createElement(`h${level}`, { id: toLowerCase(children[0]) }, children);
+
+Heading.propTypes = {
+  level: PropTypes.number,
+  children: PropTypes.node,
+};
 
 export default Heading;

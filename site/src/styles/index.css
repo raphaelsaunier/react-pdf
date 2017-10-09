@@ -1,14 +1,5 @@
-@import "basscss";
-@import "basscss-border-colors";
 @import "./colors";
 @import "./fonts";
-@import "./layout";
-@import "./borders";
-
-:root {
-  --space-3: 50px;
-  --space-4: 110px;
-}
 
 * {
   margin: 0px;
@@ -192,4 +183,12 @@ table td {
   line-height: 24px;
   padding: 5px 11px;
 	border: 1px solid rgba(166,166,166,0.2);
+}
+
+input {
+  padding: 20px;
+  font-size: 16px;
+  line-height: 24px;
+  border: none;
+  outline: none;
 }

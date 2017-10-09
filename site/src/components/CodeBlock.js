@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Icon from './Icon';
 
 const CodeBlock = props =>
-  <pre className="bg-black">
+  <pre>
     <div>
       <Icon type="eye" />
       <Icon type="files-o" />
