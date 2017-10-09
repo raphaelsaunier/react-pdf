@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const Nav = ({ className, style }) =>
@@ -7,8 +8,8 @@ const Nav = ({ className, style }) =>
   </nav>;
 
 Nav.propTypes = {
-  className: React.PropTypes.string,
-  style: React.PropTypes.object,
+  className: PropTypes.string,
+  style: PropTypes.object,
 };
 
 export default Nav;

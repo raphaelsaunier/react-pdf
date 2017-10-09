@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Icon from './Icon';
 
 const CodeBlock = props =>
@@ -13,7 +14,7 @@ const CodeBlock = props =>
   </pre>;
 
 CodeBlock.propTypes = {
-  literal: React.PropTypes.string.isRequired,
+  literal: PropTypes.string.isRequired,
 };
 
 export default CodeBlock;
