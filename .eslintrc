@@ -34,6 +34,6 @@
     "react/require-default-props": ["off"],
     "react/no-array-index-key": ["off"],
     "react/jsx-wrap-multilines": ["off"],
-    "object-curly-spacing": ["error", "always"]
+    "object-curly-spacing": ["error", "always"],
   }
 }

@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "basscss": "^8.0.3",
+    "basscss-border-colors": "^2.1.0",
     "classnames": "^2.2.5",
     "font-awesome": "^4.7.0",
     "react": "^15.6.1",

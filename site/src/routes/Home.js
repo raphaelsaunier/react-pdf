@@ -1,6 +1,7 @@
 import React from 'react';
 import Markdown from 'react-markdown';
 import Nav from '../components/Nav';
+import Heading from '../components/Heading';
 import CodeBlock from '../components/CodeBlock';
 import CornerGraphics from '../static/images/corner-graphics.png';
 import DocumentGraphic from '../static/images/document-graphic.png';
@@ -13,17 +14,14 @@ const Home = () =>
     <Nav style={{ width: '240px' }} />
 
     <section className="p4" style={{ flex: 1 }}>
-      <h1>react-pdf</h1>
-      <div>
-        React renderer for creating PDF files on the browser, mobile and server.
-      </div>
+      <Heading />
       <img
         src={DocumentGraphic}
         alt=""
         className="my3"
         style={{ width: '210px' }}
       />
-      <Markdown source={index} renderers={{ CodeBlock }} />;
+      <Markdown source={index} renderers={{ CodeBlock }} />
     </section>
   </main>;
 

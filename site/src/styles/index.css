@@ -1,7 +1,9 @@
 @import "basscss";
+@import "basscss-border-colors";
 @import "./colors";
 @import "./fonts";
 @import "./layout";
+@import "./borders";
 
 :root {
   --space-3: 50px;
@@ -93,8 +95,20 @@ a {
   text-decoration: none;
 }
 
+ul, ol {
+  margin-left: 12px;
+  list-style-position: inside;
+}
+
+li {
+  color: var(--black);
+  font-size: 16px;
+  line-height: 36px;
+}
+
 code {
-  padding: 4px;
+  padding: 4px 6px;
+  margin: 0px 4px;
   font-size: 16px;
   line-height: 24px;
   border-radius: 4px;
@@ -130,9 +144,52 @@ blockquote {
   margin-bottom: 40px;
   background-color: #F8F8F8;
   border-radius: 0 6px 6px 0;
-  border-left: 2px solid var(--dark-red);
+  border-left: 2px solid var(--red);
 }
 
 blockquote p {
   margin: 0px;
+}
+
+table {
+  width: 100%;
+  margin-bottom: 48px;
+  font-size: 16px;
+  line-height: 24px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  box-shadow: 0 25px 50px 0 rgba(62,62,62,0.15);
+  overflow: hidden;
+}
+
+table tr:nth-child(even) {
+	background-color: var(--white);
+}
+
+table tr:nth-child(odd) {
+	background-color: #FBFBFB;
+}
+
+table th {
+  padding: 5px 11px;
+  text-align: left;
+  font-family: Taviraj;
+  color: var(--dark-red);
+  background-color: var(--light-red);
+  border: 1px solid rgba(141,22,2,0.2);
+}
+
+table th:first-child {
+  border-top-left-radius: 6px;
+}
+
+table th:last-child {
+  border-top-right-radius: 6px;
+}
+
+table td {
+  font-size: 16px;
+  line-height: 24px;
+  padding: 5px 11px;
+	border: 1px solid rgba(166,166,166,0.2);
 }
