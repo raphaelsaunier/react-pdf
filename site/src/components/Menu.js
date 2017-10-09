@@ -1,26 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import toLowerCase from '../utils/toLowerCase';
 import docs from '../index.md';
 
-const Menu = styled.ul`
+const List = styled.ul`
   margin: 0px;
   width: 100%;
   list-style: none;
 `;
 
-const Link = ({ className, children }) =>
+const Item = styled(({ className, children }) =>
   <li className={className}>
     <a href={`#${toLowerCase(children)}`}>{children}</a>
-  </li>;
-
-Link.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node,
-};
-
-const MenuItem = styled(Link)`
+  </li>,
+)`
   padding: 6px 12px;
   > a {
     padding: 6px 10px;
@@ -33,10 +26,12 @@ const docItems = docs
   .match(/###(.*)/g)
   .map(match => match.replace('###', '').trim());
 
-export default () =>
-  <Menu>
-    {docItems.map(item => <MenuItem key={item}>{item}</MenuItem>)}
-    <MenuItem active>Playground / REPL</MenuItem>
-    <MenuItem>Donate</MenuItem>
-    <MenuItem>Forum</MenuItem>
-  </Menu>;
+const Menu = () =>
+  <List>
+    {docItems.map(item => <Item key={item}>{item}</Item>)}
+    <Item active>Playground / REPL</Item>
+    <Item>Donate</Item>
+    <Item>Forum</Item>
+  </List>;
+
+export default Menu;
