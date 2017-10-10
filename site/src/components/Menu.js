@@ -1,7 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { withState } from 'recompose';
 import toLowerCase from '../utils/toLowerCase';
 import docs from '../index.md';
+
+const Link = styled.a`
+  padding: 6px 10px;
+  color: ${props => (props.active ? '#3E3E3E' : '#A6A6A6')};
+  border-left: ${props => props.active && '2px solid #F01E00'};
+`;
 
 const List = styled.ul`
   margin: 0px;
@@ -9,29 +17,46 @@ const List = styled.ul`
   list-style: none;
 `;
 
-const Item = styled(({ className, children }) =>
+const Item = styled(({ index, active, onClick, className, children }) =>
   <li className={className}>
-    <a href={`#${toLowerCase(children)}`}>{children}</a>
+    <Link
+      href={`#${toLowerCase(children)}`}
+      onClick={() => onClick(index)}
+      active={active}
+    >
+      {children}
+    </Link>
   </li>,
-)`
-  padding: 6px 12px;
-  > a {
-    padding: 6px 10px;
-    color: ${props => (props.active ? '#3E3E3E' : '#A6A6A6')};
-    border-left: ${props => props.active && '2px solid #F01E00'};
-  }
-`;
+)`padding: 6px 12px;`;
 
 const docItems = docs
   .match(/###(.*)/g)
   .map(match => match.replace('###', '').trim());
 
-const Menu = () =>
+const Menu = ({ activeItem, setActiveItem }) =>
   <List>
-    {docItems.map(item => <Item key={item}>{item}</Item>)}
-    <Item active>Playground / REPL</Item>
+    {docItems.map((item, index) =>
+      <Item
+        key={item}
+        index={index}
+        active={activeItem === index}
+        onClick={setActiveItem}
+      >
+        {item}
+      </Item>,
+    )}
+    <Item>Playground / REPL</Item>
     <Item>Donate</Item>
     <Item>Forum</Item>
   </List>;
 
-export default Menu;
+Menu.propTypes = {
+  activeItem: PropTypes.number,
+  setActiveItem: PropTypes.func,
+};
+
+Item.defaultProps = {
+  onClick: () => {},
+};
+
+export default withState('activeItem', 'setActiveItem', 0)(Menu);
