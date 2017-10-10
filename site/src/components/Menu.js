@@ -12,17 +12,18 @@ const Link = styled.a`
 `;
 
 const List = styled.ul`
+  flex: 1;
   margin: 0px;
   width: 100%;
   list-style: none;
 `;
 
-const Item = styled(({ index, active, onClick, className, children }) =>
+const Item = styled(({ index, href, onClick, className, children, ...props }) =>
   <li className={className}>
     <Link
-      href={`#${toLowerCase(children)}`}
+      href={href || `#${toLowerCase(children)}`}
       onClick={() => onClick(index)}
-      active={active}
+      {...props}
     >
       {children}
     </Link>
@@ -46,8 +47,12 @@ const Menu = ({ activeItem, setActiveItem }) =>
       </Item>,
     )}
     <Item>Playground / REPL</Item>
-    <Item>Donate</Item>
-    <Item>Forum</Item>
+    <Item href="https://opencollective.com/react-pdf" target="_blank">
+      Donate
+    </Item>
+    <Item href="https://github.com/diegomura/react-pdf/issues" target="_blank">
+      Forum
+    </Item>
   </List>;
 
 Menu.propTypes = {

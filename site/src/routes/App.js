@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import SearchInput from '../components/SearchInput';
+import Logo from '../components/Logo';
+import Icon from '../components/Icon';
 import Menu from '../components/Menu';
-import Logo from '../static/images/logo.png';
 
 const Main = styled.main`
   display: flex;
@@ -18,6 +19,7 @@ const Nav = styled.nav`
 
 const Fixed = styled.div`
   width: inherit;
+  height: 100%;
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -29,15 +31,19 @@ const Section = styled.section`
   padding: 110px;
 `;
 
-const rotate360 = keyframes`
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-`;
-
-const LogoImage = styled.img`
-  width: 54px;
-  padding: 56px;
-  animation: ${rotate360} 4s linear infinite;
+const GitHubIcon = styled(({ className }) =>
+  <a
+    target="_blank"
+    rel="noopener noreferrer"
+    href="http://www.github.com/diegomura/react-pdf"
+    className={className}
+  >
+    <Icon type="github" size={30} />
+  </a>,
+)`
+  color: black;
+  margin-bottom: 36px;
+  opacity: 0.3;
 `;
 
 const App = ({ children }) =>
@@ -45,8 +51,9 @@ const App = ({ children }) =>
     <Nav>
       <Fixed>
         <SearchInput />
-        <LogoImage src={Logo} />
+        <Logo />
         <Menu />
+        <GitHubIcon />
       </Fixed>
     </Nav>
 
