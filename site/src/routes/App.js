@@ -2,20 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import SearchInput from '../components/SearchInput';
+import Main from '../components/Main';
+import Nav from '../components/Nav';
+import Section from '../components/Section';
 import Logo from '../components/Logo';
 import Icon from '../components/Icon';
 import Menu from '../components/Menu';
-
-const Main = styled.main`
-  display: flex;
-  min-height: 100%;
-`;
-
-const Nav = styled.nav`
-  position: relative;
-  width: 240px;
-  background-color: #F8F8F8;
-`;
 
 const Fixed = styled.div`
   width: inherit;
@@ -24,11 +16,6 @@ const Fixed = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
-
-const Section = styled.section`
-  flex: 1;
-  padding: 110px;
 `;
 
 const GitHubIcon = styled(({ className }) =>
