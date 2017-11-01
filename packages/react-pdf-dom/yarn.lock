@@ -1247,10 +1247,6 @@ react-dom@16.0.0-alpha.4:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
 
-react-pdf@0.1.0:
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/react-pdf/-/react-pdf-0.0.10.tgz#57b827c03143d7b82eb8b5a3d545703ec39a8764"
-
 react@16.0.0-alpha.4:
   version "16.0.0-alpha.4"
   resolved "https://registry.yarnpkg.com/react/-/react-16.0.0-alpha.4.tgz#1c25369aeee934df86466cf4f09144c7f6e3fac2"
